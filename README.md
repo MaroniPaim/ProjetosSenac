@@ -1,5 +1,5 @@
-# ProjetosSenac
-
+# ProjetosSenac<br>
+ Todas as funções funcionam por um input do usuário com um id declarado
  as funções: SOMAR, SUBTRAIR, MULTIPLICAR, DIVIDIR, realizam tais operações de N1 para N2 <br>
  as funções: MEDIA E MULTT realizam operações usando N1,N2 e N3,mas estão desabilitadas <br>
  a função MULTA multiplica qualquer valor que ultrapassar 50 por 4  <br>
