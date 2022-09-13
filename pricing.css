@@ -1,0 +1,22 @@
+body {
+  background: #0D0D0D;
+
+color: #fff;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+h1{color:#fff}
+small{color:#fff}
+nav{border-bottom: 2px rgba(255, 255, 255, 0.338) solid;}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

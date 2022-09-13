@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.101.0">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
+  <title>Pricing example · Bootstrap v5.2</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/">
+
+
+
+
+
+  <link href="bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: #3e7ec2;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      padding-bottom: 20px;
+    }
+
+    .navbar {
+      margin-bottom: 20px;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="pricing.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check" viewBox="0 0 16 16">
+      <title>Check</title>
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+  </svg>
+
+  <nav class="navbar navbar-dark bg-dark border-1 fixed-top" aria-label="First navbar example">
+    <div class="container-fluid">
+      <div><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+          class="pt-2me-3 bi bi-dpad-fill" viewBox="0 0 16 16">
+          <path
+            d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0h-3Zm1.288 2.34a.25.25 0 0 1 .424 0l.799 1.278A.25.25 0 0 1 8.799 4H7.201a.25.25 0 0 1-.212-.382l.799-1.279Zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12H8.8a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0Zm-4.17-4.65-1.279-.798a.25.25 0 0 1 0-.424l1.279-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.382.212Zm10.043-.798-1.278.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z" />
+        </svg>
+        <a class="navbar-brand" href="#">Lucas Maroni Paim</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+        aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav me-auto mb-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Orçamento</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Outros
+              alunos</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.fasim.com.br/senac/jggomes/pricing/">João Gomes</a></li>
+              <li><a class="dropdown-item" href="https://www.fasim.com.br/senac/Ericksantino/pricing/">Erick</a></li>
+              <li><a class="dropdown-item" href="https://www.fasim.com.br/senac/Ariel/pricing/">Ariel</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center mt-5">
+    <h1 class="display-4 fw-normal">Seja Bem-vindo</h1>
+    <p class="fs-5">Alguém me ajuda, eu não faço ideia do que estou fazendo!</p>
+  </div>
+  </header>
+
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <!--Card de Introdução-->
+
+      <div class="col">
+        <!--Calculadora de primeiro grau-->
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <!--Calculadora simples-->
+            <h4 class="my-0 fw-normal">Calculadora de Primeiro Grau</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>X
+                <select id="opg">
+                  <option value="+">+</option>
+                  <option value="-">-</option>
+                  <option value="/">/</option>
+                  <option value="*">*</option>
+                </select>
+
+                <input class="me-1 mb-1 rounded-3 w-25" type="number" id="n1g">
+                =
+                <input class="me-1 mb-1 rounded-3 w-25" type="number" id="n2g">
+              </li>
+
+
+
+              <li class="pd">
+                <button type="button" class="w-25 btn btn-sm btn-primary mb-1 rounded-3"
+                  onclick="primeirog()">Solucionar</button>
+
+              </li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary" id="botg" disabled>X?</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!--Calculadora de RAIO DE UM Circulo-->
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Calculadora de Area de circunferencia</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Insira o raio da circunferência</li>
+              <li><input class="me-1 mb-1 rounded-3 w-25" type="number" id="raio"></li>
+
+
+
+
+              <li class="pd">
+                <button type="button" class="w-25 btn btn-sm btn-primary mb-1 rounded-3"
+                  onclick="areacirc()">Solucionar</button>
+
+              </li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary" id="areac" disabled></button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Calculadora</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>N1: <input class="mb-1 rounded-3" type="number" id="n1"></li>
+              <li>N2: <input class="mb-1 rounded-3" type="number" id="n2"></li>
+
+
+              <li class="pd">
+                <button type="button" class="w-25 btn btn-sm btn-primary mb-1 rounded-3"
+                  onclick="somar()">SOMAR</button>
+                <button type="button" class="w-25 btn btn-sm btn-primary mb-1 rounded-3"
+                  onclick="subtrair()">SUBTRAIR</button>
+                <button type="button" class="w-25 btn btn-sm btn-primary mb-1 rounded-3"
+                  onclick="multiplicar()">MULTIPLICAR</button>
+                <button type="button" class="w-25 btn btn-sm btn-primary rounded-3" onclick="dividir()">DIVIDIR</button>
+                <button type="button" class="w-25 btn btn-sm btn-primary rounded-3" onclick="maior()"> >ou< </button>
+                    <button type="button" class="w-25 btn btn-sm btn-primary rounded-3"
+                      onclick="parouimpar()">PARouIMPAR</button>
+
+
+              </li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary" id="bot">Vai Aparecer Aqui</button>
+          </div>
+        </div>
+
+  </main>
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Suporte</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Serviços</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Preço</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contato</a></li>
+      </ul>
+      <p class="text-center text-muted">&copy; 2022 Lucas Maroni Paim</p>
+    </footer>
+
+  </div>
+</body>
+<script src="bootstrap.bundle.js"></script>
+<script>
+  var n1 = document.querySelector('#n1')
+  var n2 = document.querySelector('#n2')
+  var n3 = document.querySelector('#n3')
+  var resultado = document.querySelector('#bot')
+  var n1g = document.querySelector('#n1g')
+  var n2g = document.querySelector('#n2g')
+  var resultadog = document.querySelector('#botg')
+  var opg = document.querySelector("#opg")
+  var raio = document.querySelector("#raio")
+  var areac = document.querySelector('#areac')
+  const pi = 3.14159265359
+  var par1
+  var par2
+
+  function somar() {
+    resultado.innerHTML = "O Resultado é "
+      + (parseFloat(n1.value) + parseInt(n2.value))
+  }
+  function subtrair() {
+    resultado.innerHTML = "O Resultado é "
+      + (parseFloat(n1.value) - parseInt(n2.value))
+  }
+  function multiplicar() {
+    resultado.innerHTML = "O Resultado é "
+      + (parseFloat(n1.value) * parseInt(n2.value))
+  }
+  function dividir() {
+    resultado.innerHTML = "O Resultado é "
+      + (parseFloat(n1.value) / parseInt(n2.value))
+  }
+  function media() {
+    resultado.innerHTML = "O Resultado é "
+      + ((parseFloat(n1.value) + parseInt(n2.value) + parseFloat(n3.value)) / 3)
+  }
+  function mult() {
+    resultado.innerHTML = "O Resultado é "
+      + ((parseFloat(n1.value) + parseInt(n2.value)) * parseFloat(n1.value))
+  }
+  function maior() {
+    if (n1.value > n2.value) {
+      resultado.innerHTML = "O numéro " + n1.value + " é maior que o número " + n2.value
+
+    };
+    if (n1.value < n2.value) {
+      resultado.innerHTML = "O numéro " + n1.value + " é menor que o número " + n2.value
+
+    };
+    if (n1.value == n2.value) {
+      resultado.innerHTML = "O numéro " + n1.value + " é igual ao número " + n2.value
+
+    };
+  }
+  function parouimpar() {
+    if (n1.value % 2 == 0) { par1 = "Par" }
+    else { par1 = "Impar" }
+    if (n2.value % 2 == 0) { par2 = "Par" }
+    else { par2 = "Impar" }
+    resultado.innerHTML = "O numéro " + n1.value + " é " + par1 + " e " + n2.value + " é " + par2
+  };
+
+
+
+  function primeirog() {
+    if (opg.value == "+") {
+      resultadog.innerHTML = "X = "
+        + ((parseFloat(n2.value) - parseInt(n1.value)))
+    }
+    if (opg.value == "-") {
+      resultadog.innerHTML = "X = "
+        + ((parseFloat(n2.value) + parseInt(n1.value)))
+    }
+    if (opg.value == "*") {
+      resultadog.innerHTML = "X = "
+        + ((parseFloat(n2.value) / parseInt(n1.value)))
+    }
+    if (opg.value == "/") {
+      resultadog.innerHTML = "X = "
+        + ((parseFloat(n2.value) * parseInt(n1.value)))
+    }
+  }
+  // ultiliza a constante Pi, que possui sempre o valor de 3.14159265359 para calcular a área de um circulo a partir do seu raio
+  function areacirc() {
+    areac.innerHTML = "A área do círculo é " + ((raio.value ** 2) * pi)
+  }
+
+
+
+</script>
+
+</html>
